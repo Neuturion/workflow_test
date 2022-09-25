@@ -1,0 +1,23 @@
+name: main 
+on: push
+jobs:
+        automate-testing:
+                runs-on: alpine:latest
+                steps:
+                        -run: echo "prepare testing"
+                        -run: echo "testing........"
+                        -run: echo "finished testing"
+        build-things:
+                runs-on: ubuntu-latest
+                steps:
+                        -run: echo "setup building" 
+                        -run: echo "building......"
+                        -run: echo "finished building"
+        QA-test:
+                environment:
+                name: test_manaually_approval
+                steps:
+                        -run: echo "deployed!"
+        
+
+
