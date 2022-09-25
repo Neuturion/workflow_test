@@ -9,12 +9,14 @@ jobs:
                         - run: echo "finished testing"
         build-things:
                 runs-on: ubuntu-latest
+                needs: [automate-testing]
                 steps:
                         - run: echo "setup building" 
                         - run: echo "building......"
                         - run: echo "finished building"
         QA-test:
                 runs-on: alpine:latest
+                needs: [build-things]
                 environment:
                         name: test_manaually_approval
                 steps:
