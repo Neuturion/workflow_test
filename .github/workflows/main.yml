@@ -14,8 +14,9 @@ jobs:
                         - run: echo "building......"
                         - run: echo "finished building"
         QA-test:
+                runs-on: alpine:latest
                 environment:
-                name: test_manaually_approval
+                        name: test_manaually_approval
                 steps:
                         - run: echo "deployed!"
         
